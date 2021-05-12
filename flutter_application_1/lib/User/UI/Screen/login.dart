@@ -49,7 +49,7 @@ class Login extends StatelessWidget {
                       decoration: InputDecoration(
                         labelStyle: new TextStyle(color: Colors.white),
                         hintStyle: new TextStyle(color: Colors.lightBlue),
-                        hintText: 'Ingrese su Correo',
+                        hintText: 'Ingrese su Correo..',
                         labelText: 'Email or Phone Number',
                       ),
                     ),
@@ -61,7 +61,7 @@ class Login extends StatelessWidget {
                       decoration: InputDecoration(
                         labelStyle: new TextStyle(color: Colors.white),
                         hintStyle: new TextStyle(color: Colors.lightBlue),
-                        hintText: 'Ingrese su clave',
+                        hintText: 'Ingrese su clave..',
                         labelText: 'Password',
                       ),
                     ),
