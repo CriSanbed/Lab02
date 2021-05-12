@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/User/Bloc/BLOC_user.dart';
+import 'package:flutter_application_1/User/UI/Screen/login.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -9,57 +12,20 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.purple,
-        // This makes the visual density adapt to the platform that you run
-        // the app on. For desktop platforms, the controls will be smaller and
-        // closer together (more dense) than on mobile platforms.
-        visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      //home: MyHomePage(title: 'Flutter Demo Home Page'),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text("Mi primera App"),
-        ),
-        body: Stack(
-          fit: StackFit.expand,
-          children: [
-            Image(
-              fit: BoxFit.cover,
-              image: AssetImage("assets/img/galaxia.jpg"),
-            ),
-            Center(
-              child: Container(
-                alignment: Alignment.center,
-                color: Colors.white54,
-                constraints: BoxConstraints.expand(height: 55),
-                child: Text(
-                  "Hola Universo a todos",
-                  style: TextStyle(color: Colors.black, fontSize: 40),
-                ),
-              ),
-            )
-          ],
-        ),
-      ),
+      title: 'Interfaz Login',
+      home: Login(),
+      initialRoute: 'main',
+      routes: {
+        'main': (context) => Login(),
+      },
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+/* class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
-
-  // This widget is the home page of your application. It is stateful, meaning
+} */
+/* // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
   // how it looks.
 
@@ -140,3 +106,4 @@ class _MyHomePageState extends State<MyHomePage> {
     );
   }
 }
+ */
