@@ -29,7 +29,7 @@ class Login extends StatelessWidget {
               alignment: Alignment.center,
               width: 250.0,
               height: 100.0,
-              child: Text('''Welcome Back''',
+              child: Text('''Welcome Back.''',
                   textAlign: TextAlign.center,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
