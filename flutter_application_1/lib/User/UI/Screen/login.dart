@@ -130,7 +130,7 @@ class Login extends StatelessWidget {
                           children: [
                             new TextSpan(
                               text: 'Don`t have any Account? ',
-                              style: new TextStyle(color: Colors.black),
+                              style: new TextStyle(color: Colors.white),
                             ),
                             new TextSpan(
                               text: 'Create new!',

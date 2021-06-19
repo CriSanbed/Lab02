@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/Bloc/BLOC_user.dart';
 import 'package:flutter_application_1/User/UI/Screen/login.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
+import 'package:flutter_application_1/User/UI/Screen/profile.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,14 +12,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Interfaz Login',
-      home: Login(),
-      initialRoute: 'main',
-      routes: {
-        'main': (context) => Login(),
-      },
-    );
+    return BlocProvider(
+        child: MaterialApp(
+          title: 'Interfaz Login',
+          home: Profile(),
+          initialRoute: 'main',
+          routes: {
+            'main': (context) => Profile(),
+          },
+        ),
+        bloc: UserBloc());
   }
 }
 
