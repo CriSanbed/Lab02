@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/Bloc/BLOC_user.dart';
 import 'package:flutter_application_1/User/UI/Screen/login.dart';
+import 'package:flutter_application_1/User/UI/Screen/login2.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 import 'package:flutter_application_1/User/UI/Screen/profile.dart';
 
@@ -10,15 +11,17 @@ void main() {
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
+  // ESTE PROYECTO LO ESTOY GUARDANDO EN EL REPOSITORIO: LAB02, en la rama MASTER
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
         child: MaterialApp(
           title: 'Interfaz Login',
-          home: Profile(),
+          home: Login2(),
           initialRoute: 'main',
           routes: {
-            'main': (context) => Profile(),
+            'main': (context) => Login2(),
           },
         ),
         bloc: UserBloc());
