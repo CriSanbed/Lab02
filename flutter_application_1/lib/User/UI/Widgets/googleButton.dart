@@ -11,11 +11,11 @@ class GoogleButton extends StatefulWidget {
   final VoidCallback onPressed;
 
   GoogleButton({
-    Key key,
-    @required this.textC,
-    @required this.widthC,
-    @required this.heightC,
-    @required this.onPressed,
+    Key? key,
+    required this.textC,
+    required this.widthC,
+    required this.heightC,
+    required this.onPressed,
   });
 
   @override

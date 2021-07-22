@@ -1,30 +1,50 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/User/Bloc/BLOC_user.dart';
+import 'package:flutter_application_1/User/UI/Screen/profile.dart';
 import 'package:flutter_application_1/User/UI/Widgets/textinput.dart';
 import 'package:flutter_application_1/User/UI/Widgets/googleButton.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:generic_bloc_provider/generic_bloc_provider.dart';
 
 class Login2 extends StatelessWidget {
+  late UserBloc blocUser;
   final _controllerUsername = TextEditingController();
   final _controllerPassword = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    blocUser = BlocProvider.of(context);
+    return _controlSession();
+  }
+
+  Widget _controlSession() {
+    return StreamBuilder(
+        stream: blocUser.authStatus,
+        builder: (BuildContext context, AsyncSnapshot snapshot) {
+          if (!snapshot.hasData || snapshot.hasError) {
+            return loginApp();
+          } else {
+            return Profile();
+          }
+        });
+  }
+
+  Widget loginApp() {
     return Scaffold(
         body: Container(
       child: ListView(
         children: <Widget>[
           Container(
-            height: 250.0,
-            width: 250.0,
+            height: 250,
+            width: 250,
             margin: EdgeInsets.only(top: 15.0),
             decoration: BoxDecoration(
-              image: DecorationImage(
-                fit: BoxFit.scaleDown,
-                image: AssetImage("assets/img/login.png"),
-              ),
-              borderRadius: BorderRadius.all(Radius.circular(10.0)),
-              shape: BoxShape.rectangle,
-            ),
-          ), //CONTAINER PARA LA FOTO
+                image: DecorationImage(
+                    fit: BoxFit.scaleDown,
+                    image: AssetImage("assets/img/login.png")),
+                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                shape: BoxShape.rectangle),
+          ),
 
           Container(
             height: 40.0,
@@ -72,7 +92,10 @@ class Login2 extends StatelessWidget {
               textC: 'Login with Google',
               widthC: 80,
               heightC: 35,
-              onPressed: () {})
+              onPressed: () {
+                blocUser.singIn().then((UserCredential user) =>
+                    print("Usted se ha autenticado como ${user.user}"));
+              })
         ],
       ),
     ));

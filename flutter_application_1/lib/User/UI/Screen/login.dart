@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/UI/Screen/colorFondo.dart';
-import 'package:url_launcher/url_launcher.dart';
+//import 'package:url_launcher/url_launcher.dart';
 
 class Login extends StatelessWidget {
   @override
@@ -137,7 +137,7 @@ class Login extends StatelessWidget {
                               style: new TextStyle(color: Colors.blue),
                               recognizer: new TapGestureRecognizer()
                                 ..onTap = () {
-                                  launch('https://google.com');
+                                  // launch('https://google.com');
                                 },
                             ),
                           ],

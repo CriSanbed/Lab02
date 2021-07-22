@@ -9,11 +9,11 @@ class TextInput extends StatelessWidget {
 
   //constructor
   TextInput(
-      {Key key,
-      @required this.hint,
-      @required this.inputType,
-      @required this.controller,
-      this.maxLineas});
+      {Key? key,
+      required this.hint,
+      required this.inputType,
+      required this.controller,
+      required this.maxLineas});
 
   @override
   Widget build(BuildContext context) {

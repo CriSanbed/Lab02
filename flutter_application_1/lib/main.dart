@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/User/Bloc/BLOC_user.dart';
-import 'package:flutter_application_1/User/UI/Screen/login.dart';
+//import 'package:flutter_application_1/User/UI/Screen/login.dart';
 import 'package:flutter_application_1/User/UI/Screen/login2.dart';
 import 'package:generic_bloc_provider/generic_bloc_provider.dart';
-import 'package:flutter_application_1/User/UI/Screen/profile.dart';
+//import 'package:flutter_application_1/User/UI/Screen/profile.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
-
+  const MyApp({Key? key}) : super(key: key);
   // ESTE PROYECTO LO ESTOY GUARDANDO EN EL REPOSITORIO: LAB02, en la rama MASTER
   @override
   Widget build(BuildContext context) {
